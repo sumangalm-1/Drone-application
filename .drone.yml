@@ -15,3 +15,5 @@ steps:
 trigger:
   branch:
   - main
+  event:
+  - push
