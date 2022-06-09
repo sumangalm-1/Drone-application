@@ -11,3 +11,7 @@ steps:
   image: alpine
   commands:
   - echo "It worked!"
+  
+trigger:
+  branch:
+  - main
