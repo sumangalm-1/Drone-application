@@ -12,8 +12,3 @@ steps:
   commands:
   - echo "It worked!"
 
-trigger:
-  branch:
-  - main
-  event:
-  - push
