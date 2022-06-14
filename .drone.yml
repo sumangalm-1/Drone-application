@@ -4,7 +4,7 @@ type: docker
 
 platform:
   os: linux
-  arch: x86_64
+  arch: amd64
 
 steps:
 - name: test
