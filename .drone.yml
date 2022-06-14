@@ -1,6 +1,6 @@
-name: amd64
 kind: pipeline
 type: docker
+name: amd64
 
 platform:
   os: linux
@@ -12,9 +12,10 @@ steps:
   - echo "It worked!
   
 ---
-name: arm64
+
 kind: pipeline
 type: docker
+name: arm64
 
 platform:
   os: linux
@@ -24,5 +25,4 @@ steps:
   image: alpine
   commands:
   - echo "It worked!
----
 
