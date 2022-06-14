@@ -1,14 +1,39 @@
+name: amd64
 kind: pipeline
 type: docker
-name: default
 
+platform:
+  os: linux
+  arch: amd64
 steps:
-- name: backend
-  image: golang
-  failure: ignore
-  environment:
-    GOOS: linux
-    GOARCH: amd64
+- name: test
+  image: alpine
   commands:
-  - go build
-  - go test
+  - echo "It worked!
+  
+---
+name: arm64
+kind: pipeline
+type: docker
+
+platform:
+  os: linux
+  arch: arm64
+steps:
+- name: test
+  image: alpine
+  commands:
+  - echo "It worked!
+---
+name: ppc64le
+kind: pipeline
+type: docker
+
+platform:
+  os: linux
+  arch: ppc64le
+steps:
+- name: test
+  image: alpine
+  commands:
+  - echo "It worked!
