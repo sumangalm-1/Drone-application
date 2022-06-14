@@ -5,6 +5,7 @@ name: default
 steps:
 - name: backend
   image: golang
+  failure: ignore
   environment:
     GOOS: linux
     GOARCH: amd64
