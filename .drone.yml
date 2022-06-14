@@ -3,8 +3,11 @@ type: docker
 name: default
 
 steps:
-- name: greeting
-  image: golang:1.12
+- name: backend
+  image: golang
+  environment:
+    GOOS: linux
+    GOARCH: amd64
   commands:
   - go build
   - go test
