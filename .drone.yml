@@ -25,15 +25,4 @@ steps:
   commands:
   - echo "It worked!
 ---
-name: ppc64le
-kind: pipeline
-type: docker
 
-platform:
-  os: linux
-  arch: ppc64le
-steps:
-- name: test
-  image: alpine
-  commands:
-  - echo "It worked!
