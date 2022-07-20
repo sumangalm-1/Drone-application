@@ -9,19 +9,5 @@ steps:
 - name: test
   image: alpine
   commands:
-  - echo "It worked!
+  - echo "It worked!"
   
----
-
-kind: pipeline
-type: docker
-name: arm64
-
-platform:
-  os: linux
-  arch: arm64
-steps:
-- name: test
-  image: alpine
-  commands:
-  - echo "It worked!
