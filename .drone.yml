@@ -17,7 +17,7 @@ name: arm64
 
 platform:
   os: linux
-  arch: amd64
+  arch: arm64
 steps:
 - name: docker buildx
   image: docker:20
