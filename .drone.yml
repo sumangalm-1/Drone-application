@@ -13,18 +13,26 @@ steps:
 ---
 kind: pipeline
 type: docker
+name: arm64
+
+platform:
+  os: linux
+  arch: arm64
+steps:
+- name: test
+  image: alpine
+  commands:
+  - echo "It worked!"
+---
+kind: pipeline
+type: docker
 name: ppc64le
 
 platform:
   os: linux
   arch: ppc64le
 steps:
-- name: docker buildx
-  image: docker:20
+- name: test
+  image: alpine
   commands:
-  - docker login
-  - docker buildx build -t test -f Dockerfile .
-  - docker tag test sbm13/test1
-  - docker push sbm13/test
   - echo "It worked!"
-  
