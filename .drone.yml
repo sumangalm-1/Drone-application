@@ -8,7 +8,7 @@ platform:
 steps:
 
 - name: Buildx
-  image: plugins/docker
+  image: docker
   volumes:
     - name: docker socket
       path: /var/run/docker.sock
