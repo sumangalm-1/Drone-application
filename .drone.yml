@@ -15,5 +15,7 @@ steps:
     - name: docker socket
       path: /var/run/docker.sock:/var/run/docker.sock
   commands:
+  - docker run --privileged --rm tonistiigi/binfmt --install all
   -  docker buildx version
+  - docker buildx create --use --name mybuild node-amd64
   - docker buildx ls
