@@ -18,7 +18,7 @@ name: arm64
 
 platform:
   os: linux
-  arch: arm64
+  arch: amd64
 steps:
 - name: Install Qemu
   image: tonistiigi/binfmt
