@@ -9,12 +9,7 @@ steps:
   environment:
     GOOS: linux
     GOARCH: ppc64le
-  services:
-    - docker:20.10.17-dind
-
-  variables:
-     DOCKER_DRIVER: overlay
-
+ 
   volumes:
     - name: docker socket
       path: /var/run/docker.sock:/var/run/docker.sock
