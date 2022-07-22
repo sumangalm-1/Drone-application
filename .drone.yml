@@ -4,13 +4,18 @@ name: amd64
 
 platform:
   os: linux
-  arch: amd64
+  arch: ppc64le
 steps:
 
 - name: Buildx
   image: docker:20
+  variables:
+     DOCKER_DRIVER: overlay2
+
   volumes:
     - name: docker socket
       path: /var/run/docker.sock:/var/run/docker.sock
   commands:
+  -  docker buildx version
   - docker buildx build --platform linux/ppc64le -t sbm13/multiarch-test:latest --push .
+
