@@ -11,7 +11,7 @@ steps:
   image: docker:20
   volumes:
     - name: docker socket
-      path: /var/run/docker.sock  
+      path: /var/run/docker.sock:/var/run/docker.sock
   commands:
-  - curl --unix-socket /var/run/docker.sock http://localhost/version
+
   - docker buildx ls
