@@ -13,4 +13,5 @@ steps:
     - name: docker socket
       path: /var/run/docker.sock  
   commands:
+  - curl --unix-socket /var/run/docker.sock http://localhost/version
   - docker buildx ls
