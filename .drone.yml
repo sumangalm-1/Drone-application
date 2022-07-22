@@ -16,7 +16,4 @@ steps:
     - name: docker socket
       path: /var/run/docker.sock
   commands:
-  - docker run  --volume=/var/run/docker.sock:/var/run/docker.sock --rm --privileged multiarch/qemu-user-static:register
-  - docker buildx create --use --name mybuild node-amd64
-  - docker buildx create --append --name mybuild node-arm64
-  - docker buildx build --platform linux/arm64 .
+  - cat /proc/sys/fs/binfmt_misc/qemu-arm64
