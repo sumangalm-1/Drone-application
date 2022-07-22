@@ -11,6 +11,7 @@ steps:
   environment:
     GOOS: linux
     GOARCH: ppc64le
+    DOCKER_CLI_EXPERIMENTAL: enabled
  
   volumes:
     - name: docker socket
@@ -18,8 +19,6 @@ steps:
   commands:
  
   - docker buildx version
-  - export DOCKER_CLI_EXPERIMENTAL=enabled
-  - systemctal restart docker
   - docker buildx create --driver docker-container --use
   - docker buildx create --platform linux/arm64,linux/arm/v8,linux/ppc64le
   - docker buildx build  -t  test -f Dockerfile . 
