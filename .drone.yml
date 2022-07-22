@@ -16,5 +16,5 @@ steps:
     - name: docker socket
       path: /var/run/docker.sock
   commands:
-  - /usr/bin/ |grep qemu
+
   - cat /proc/sys/fs/binfmt_misc/qemu-amd64
