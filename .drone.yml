@@ -18,7 +18,7 @@ steps:
   commands:
  
   - docker buildx version
-  - docker login -u sbm13 -p Sbm@1396
+  - docker login -u "$username" -p "$password"
   - docker buildx create --platform linux/arm64,linux/arm/v8
   - docker buildx build  --platform linux/ppc64le -t  test  .
   - docker tag test  sbm13/multiarch-test:latest
