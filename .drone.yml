@@ -20,5 +20,4 @@ steps:
       path: /var/run/docker.sock:/var/run/docker.sock
   commands:
   -  docker buildx version
-  - docker buildx build --platform linux/ppc64le -t sbm13/multiarch-test:latest --push .
-
+  - docker info
