@@ -13,7 +13,7 @@ steps:
     - docker:20.10.17-dind
 
   variables:
-     DOCKER_DRIVER: zfs
+     DOCKER_DRIVER: aufs
 
   volumes:
     - name: docker socket
