@@ -8,7 +8,8 @@ platform:
 steps:
 
 - name: Buildx
-  image: plugins/docker
+  image: tonistiigi/binfmt
+
   
   commands:
 
