@@ -9,7 +9,9 @@ steps:
 
 - name: Buildx
   image: docker
-
+  volumes:
+    - name: docker socket
+      path: /var/run/docker.sock
   
   commands:
 
