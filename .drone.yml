@@ -11,10 +11,6 @@ steps:
   image: docker:20
   volumes:
     - name: docker socket
-      path: /var/run/docker.sock
-
-  
-  
+      path: /var/run/docker.sock  
   commands:
-  - docker login -u sbm13 -p Sbm@1396
   - docker buildx ls
