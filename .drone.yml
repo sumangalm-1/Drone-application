@@ -8,7 +8,7 @@ platform:
 steps:
 
 - name: Buildx
-  image: docker:20
+  image: plugins/docker
   
   commands:
   - apt show qemu-system-x86
