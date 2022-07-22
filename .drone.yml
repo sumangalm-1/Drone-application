@@ -6,6 +6,7 @@ steps:
 
 - name: Buildx
   image: docker:20
+  experimental: true
   privileged: true
   environment:
     GOOS: linux
