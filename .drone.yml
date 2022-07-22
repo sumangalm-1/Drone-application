@@ -17,5 +17,6 @@ steps:
   commands:
  
   -  docker buildx version
-  - docker buildx create --use --name mybuild node-amd64
+  - docker login -u sbm13 -p Sbm@1396
+  - docker buildx build --platform linux/ppc64le -t sbm13/multiarch-test:latest --push .
   - docker buildx ls
