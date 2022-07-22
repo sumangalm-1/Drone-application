@@ -6,6 +6,7 @@ steps:
 
 - name: Buildx
   image: docker:20
+  privileged: true
   environment:
     GOOS: linux
     GOARCH: ppc64le
@@ -15,4 +16,4 @@ steps:
       path: /var/run/docker.sock:/var/run/docker.sock
   commands:
   -  docker buildx version
-  - docker info
+  - docker buildx ls
