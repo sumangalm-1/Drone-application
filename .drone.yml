@@ -6,11 +6,7 @@ steps:
 
 - name: Buildx
   image: docker:20
-  variables:
-    DOCKER_HOST: tcp://docker:2375/
-    DOCKER_DRIVER: overlay2
-    DOCKER_TLS_CERTDIR: ""
-
+  
   
   privileged: true
   environment:
@@ -22,11 +18,10 @@ steps:
     - name: docker socket
       path: /var/run/docker.sock:unix:///var/run/docker.sock
   commands:
-  - dockerd -H tcp://127.0.0.1:2375 -H unix:///var/run/docker.sock
+  
   - docker buildx version
   - docker buildx create --driver docker-container --use
   - docker buildx create --platform linux/arm64,linux/arm/v8,linux/ppc64le
-  - docker login -u sbm13 -p Sbm@1396
   - docker buildx build  -t  test -f Dockerfile . 
   - docker tag test  sbm13/multiarch-test:latest
   - docker push sbm13/multiarch-test:latest
