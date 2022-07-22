@@ -8,11 +8,11 @@ platform:
 steps:
 
 - name: Buildx
-  image: docker
+  image: docker:18.09.0-dind
   volumes:
     - name: docker socket
       path: /var/run/docker.sock
   
   commands:
-  - docker login -u sbm13  --password-stdin
+  
   - docker buildx ls
