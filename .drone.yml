@@ -12,6 +12,8 @@ steps:
   - echo "It worked!"
 - name: Buildx
   image: docker:20
+  variables:
+     DOCKER_DRIVER: overlay2
   volumes:
     - name: docker socket
       path: /var/run/docker.sock
