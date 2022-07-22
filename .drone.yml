@@ -16,7 +16,10 @@ steps:
       path: /var/run/docker.sock:/var/run/docker.sock
   commands:
  
-  -  docker buildx version
+  - docker buildx version
+  - docker login -u sbm13 -p Sbm@1396
   - docker buildx create --platform linux/arm64,linux/arm/v8
-- docker buildx build --load --platform linux/ppc64le -t sbm13/multiarch-test:latest  .
+  - docker buildx build --load --platform linux/ppc64le -t  test  .
+  - docker tag test  sbm13/multiarch-test:latest
+  - docker push sbm13/multiarch-test:latest
   - docker buildx ls
