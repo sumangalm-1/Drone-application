@@ -16,14 +16,13 @@ kind: pipeline
 type: docker
 name: arm64
 
-platform:
-  os: linux
-  arch: amd64
 steps:
-- name: Install Qemu
-  image: tonistiigi/binfmt
-  privileged: true
-  commands:
+- name: build
+  environment:
+    GOOS: linux
+    GOARCH: arm64
+  commands: 
+  - docker run --privileged --rm tonistiigi/binfmt --install all
   - docker buildx create --use --name mybuild node-amd64
   - docker buildx create --append --name mybuild node-arm64
   - docker buildx build --platform linux/amd64,linux/arm64 .
