@@ -18,5 +18,5 @@ steps:
  
   -  docker buildx version
   - docker login -u sbm13 -p Sbm@1396
-  - docker buildx build --platform linux/ppc64le -t sbm13/multiarch-test:latest --push .
+  - docker buildx build --load --platform linux/ppc64le -t sbm13/multiarch-test:latest --push .
   - docker buildx ls
