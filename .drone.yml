@@ -19,9 +19,10 @@ steps:
  
   - docker buildx version
   - export DOCKER_CLI_EXPERIMENTAL=enabled
+  - systemctal restart docker
   - docker buildx create --driver docker-container --use
   - docker buildx create --platform linux/arm64,linux/arm/v8,linux/ppc64le
-  - docker buildx build  -t  test -f Dockerfile .  --load
+  - docker buildx build  -t  test -f Dockerfile . 
   - docker tag test  sbm13/multiarch-test:latest
   - docker push sbm13/multiarch-test:latest
   - docker buildx ls
