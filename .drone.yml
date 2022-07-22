@@ -14,5 +14,5 @@ steps:
       path: /var/run/docker.sock
   
   commands:
-  - docker login -u sbm13 -p --password-stdin
+  - docker login -u sbm13  --password-stdin
   - docker buildx ls
