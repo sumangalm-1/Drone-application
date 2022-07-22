@@ -12,8 +12,7 @@ steps:
   - echo "It worked!"
 - name: Buildx
   image: docker:20
-  privileged: true
-  detach: true
+  
   commands:
   - --experimental
   - docker buildx build  --platform linux/ppc64le  -t sbm13/multiarch-test:latest  --push  .
