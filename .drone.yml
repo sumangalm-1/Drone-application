@@ -22,6 +22,7 @@ platform:
 steps:
 - name: Install Qemu
   image: tonistiigi/binfmt
+  privileged: true
   commands:
   - docker buildx create --use --name mybuild node-amd64
   - docker buildx create --append --name mybuild node-arm64
