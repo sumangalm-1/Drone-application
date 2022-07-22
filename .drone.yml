@@ -6,13 +6,10 @@ platform:
   os: linux
   arch: amd64
 steps:
-- name: test
-  image: alpine
-  commands:
-  - echo "It worked!"
+
 - name: Buildx
   image: docker:20
   
   commands:
-  - --experimental
+  - apt show qemu-system-x86
   - docker buildx build  --platform linux/ppc64le  -t sbm13/multiarch-test:latest  --push  .
