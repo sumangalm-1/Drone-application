@@ -10,6 +10,7 @@ steps:
   image: alpine
   commands:
   - echo "It worked!"
+---
 
 kind: pipeline
 type: docker
@@ -19,9 +20,12 @@ platform:
   os: linux
   arch: arm64
 steps:
-- name: checkout code
-  image: actions/checkout@v2
-
+- name: Install Qemu
+  image: tonistiigi/binfmt
+  commands:
+  - docker buildx create --use --name mybuild node-amd64
+  - docker buildx create --append --name mybuild node-arm64
+  - docker buildx build --platform linux/amd64,linux/arm64 .
 - name: test
   image: alpine
   commands:
