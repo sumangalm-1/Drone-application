@@ -19,8 +19,8 @@ steps:
  
   - docker buildx version
   - docker buildx create --driver docker-container --use
-  - docker buildx create --platform linux/arm64,linux/arm/v8
-  - docker buildx build  --platform linux/ppc64le -t  test  .
+  - docker buildx create --platform linux/arm64,linux/arm/v8,linux/ppc64le
+  - docker buildx build  -t  test  .
   - docker tag test  sbm13/multiarch-test:latest
   - docker push sbm13/multiarch-test:latest
   - docker buildx ls
