@@ -17,25 +17,5 @@ steps:
       path: /var/run/docker.sock
   commands:
   - docker buildx create --use --name mybuild node-amd64
----
-
-kind: pipeline
-type: docker
-name: arm64
-
-steps:
-- name: build
-  environment:
-    GOOS: linux
-    GOARCH: arm64
-  commands: 
-  - docker run --privileged --rm tonistiigi/binfmt --install all
-  - docker buildx create --use --name mybuild node-amd64
   - docker buildx create --append --name mybuild node-arm64
   - docker buildx build --platform linux/amd64,linux/arm64 .
-- name: test
-  image: alpine
-  commands:
-  - echo "It worked!"
-
-
