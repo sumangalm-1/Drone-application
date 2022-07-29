@@ -16,8 +16,8 @@ steps:
   
  
   volumes:
-    - name: cache
-      path: /var/run/docker.sock:/var/run/docker.sock
+    - name: docker socket
+      path: /tmp/docker.sock
 
 
   commands:
@@ -30,7 +30,7 @@ steps:
   - docker buildx ls
   
 volumes:
-- name: cache
+- name: docker socket
   host:
     path: /var/run/docker.sock
 
