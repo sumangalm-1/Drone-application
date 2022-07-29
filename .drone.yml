@@ -27,3 +27,7 @@ steps:
   - docker push sbm13/multiarch-test:latest
   - docker buildx ls
   
+volumes:
+- name: docker socket
+  host:
+    path: /var/run/docker.sock
