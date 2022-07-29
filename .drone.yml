@@ -16,8 +16,8 @@ steps:
   
  
   volumes:
-    - name: docker socket
-      path: /tmp/docker.sock
+    - name: cache
+      path: /tmp/cache
   commands:
   - docker buildx version
   - docker buildx create --driver docker-container --use
@@ -28,6 +28,6 @@ steps:
   - docker buildx ls
   
 volumes:
-- name: docker socket
+- name: cache
   host:
-    path: /var/run/docker.sock
+    path: /var/lib/cache
