@@ -6,9 +6,9 @@ steps:
 
 - name: Buildx
   image: docker:20
+  privileged: true
   
   
-
   environment:
     GOOS: linux
     GOARCH: ppc64le
