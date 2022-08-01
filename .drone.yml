@@ -1,17 +1,17 @@
 kind: pipeline
 type: docker
-name: amd64
+name: ppc64le
 
 steps:
 
 - name: Buildx
-  image: docker:1.13
+  image: docker:20
   privileged: true
   
   
   environment:
     GOOS: linux
-    GOARCH: ppc64le
+    GOARCH: amd64
     DOCKER_CLI_EXPERIMENTAL: enabled
   
  
