@@ -7,6 +7,11 @@ steps:
 - name: Buildx
   image: docker:20
   privileged: true
+  settings:
+    username:
+      from_secret: docker_username
+    password:
+      from_secret: docker_password
   
   
   environment:
