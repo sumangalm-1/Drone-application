@@ -5,7 +5,7 @@ name: amd64
 steps:
 
 - name: Buildx
-  image: docker:1.13
+  image: docker:19
   privileged: true
   settings:
     username:
