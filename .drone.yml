@@ -5,7 +5,7 @@ name: default
 steps:
 
 - name: Buildx
-  image: docker:19
+  image: docker:20
   privileged: true
   settings:
     username:
