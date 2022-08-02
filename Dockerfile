@@ -1,4 +1,3 @@
 FROM ubuntu
-echo "Hello"
-
+RUN apt-get update
 
