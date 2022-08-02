@@ -32,7 +32,7 @@ steps:
   - docker images
   - docker login -u sbm13 -p Sbm@1396
   - docker buildx build -t drone-ppc64le -f ./Dockerfile .
-  - docker tag drone-ppc64le sbm13/multiarch-test:ppc64le
+  - docker tag drone-ppc64le sbm13/multiarch-test
   - docker push sbm13/multiarch-test:ppc64le
   - docker buildx ls
   
