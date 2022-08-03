@@ -30,8 +30,9 @@ steps:
   - docker buildx create --platform linux/arm64,linux/arm/v8,linux/ppc64le --name test
   - docker tag test  sbm13/multiarch-test:latest
   - docker images
-  - docker login -u sbm13 -p Sbm@1396
+ 
   - docker buildx build -t demo -f ./Dockerfile .
+  - docker login -u sbm13 -p Sbm@1396
   - docker tag demo sbm13/demo
   - docker push sbm13/demo
   - docker buildx ls
