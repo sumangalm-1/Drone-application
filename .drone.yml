@@ -32,8 +32,8 @@ steps:
   - docker images
  
   - docker login -u sbm13 -p Sbm@1396
-  - docker tag demo sbm13/base
-  - docker push sbm13/base
+ 
+  - docker push sbm13/multiarch-test:latest
   - docker buildx ls
   
 volumes:
