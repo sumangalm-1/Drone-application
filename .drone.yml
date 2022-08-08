@@ -27,7 +27,7 @@ steps:
   commands:
   - docker buildx version
   - docker buildx create --driver docker-container --use
-  - docker buildx create --platform linux/arm64,linux/arm/v8,linux/ppc64le --name test
+  - docker buildx build --platform linux/arm64,linux/arm/v8,linux/ppc64le -t test -f Dockerfile .
   - docker tag test  sbm13/multiarch-test:latest
   - docker images
  
