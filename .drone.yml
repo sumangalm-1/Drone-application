@@ -31,7 +31,6 @@ steps:
   - docker tag test  sbm13/multiarch-test:latest
   - docker images
  
-  - docker buildx build -t demo -f ./Dockerfile .
   - docker login -u sbm13 -p Sbm@1396
   - docker tag demo sbm13/base
   - docker push sbm13/base
