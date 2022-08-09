@@ -27,9 +27,8 @@ steps:
   commands:
   - docker buildx version
   - docker buildx create --driver docker-container --use
-  - docker login -u sbm13 -p Sbm@1396
+  - docker login -u $docker_username -p $docker_password
   - docker buildx build --platform linux/ppc64le,linux/arm64 -t sbm13/multiarch-test:latest -f Dockerfile . --push
-  
   - docker buildx ls
   
 volumes:
