@@ -28,16 +28,12 @@ steps:
   - docker buildx version
   - docker buildx create --driver docker-container --use
   - docker buildx build --platform linux/arm64,linux/arm/v8,linux/ppc64le -t test -f Dockerfile .
-  - docker tag test  sbm13/multiarch-test:linux/arm64
   - docker tag test  sbm13/multiarch-test:linux/ppc64le
-  - docker tag test  sbm13/multiarch-test:linux/arm/v8
   - docker images
  
   - docker login -u sbm13 -p Sbm@1396
- 
-  - docker push sbm13/multiarch-test:linux/arm64
   - docker push sbm13/multiarch-test:linux/ppc64le
-  - docker push sbm13/multiarch-test:linux/arm/v8
+  
   - docker buildx ls
   
 volumes:
